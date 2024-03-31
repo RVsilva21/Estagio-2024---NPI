@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+main.containerHome {
+
+    display: flex;
+    height: 100vh;
+    background-color: #fafffc;
+
+}
+
+nav.menu {
+
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    border-radius: 0 25px 25px 0;
+    background: linear-gradient(180deg, #012C10, #067a2f);
+    overflow: hidden;
+    transition: 0.3s;
+
+}
+
+nav.retract {
+
+    width: 80px;
+
+}
+
+nav.retract .items {
+
+    transition: 0.3s;
+    width: 55px;
+
+}
+
+nav.retract .items span {
+
+    transition: 0.3s;
+    margin-left: 30px;
+    opacity: 0;
+
+}
+
+nav.retract .logo span {
+
+    transition: 0.3s;
+    margin-left: 30px;
+    opacity: 0;
+
+}
+
+nav.retract .arrow {
+
+    margin-left: 20px;
+}
+
+nav.retract #arrowLeft {
+
+    transform: rotate(180deg);
+
+}
+
+.logo {
+
+    display: flex;
+    align-items: center;
+    margin: 15px 0px 15px 11px;
+    font-size: 20px;
+    color: #fff;
+
+}
+
+.logo span {
+
+    display: flex;
+    margin-left: 9px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+
+}
+
+
+ul {
+
+    margin-top: 40px;
+
+}
+
+ul li.items {
+
+    width: 172px;
+    padding: 7px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 25px;
+    list-style-type: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+ul li.colorItems {
+
+    background: rgb(0, 182, 63, 0.3);
+
+}
+
+ul li.items a {
+
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+    text-decoration: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    outline: none;
+
+}
+
+ul li.items span {
+
+    margin-left: 15px;
+
+}
+
+div.arrow {
+    display:flex;
+    align-items: center;
+    width: 40px;
+    margin:165px 0px 15px 145px;
+    overflow: hidden;
+    transition: 0.3s;
+
+}
+
+#arrowLeft {
+
+    transition: 0.3s;
+    cursor: pointer;
+
+}
