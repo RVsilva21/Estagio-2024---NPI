@@ -7,15 +7,48 @@
 
 }
 
-main.containerHome {
+.containerHome {
 
-    display: flex;
+    display: grid;
     height: 100vh;
     background-color: #fafffc;
+    overflow: hidden;
 
 }
 
-nav.menu {
+.content {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3px solid #333333;
+    width: 82%;
+    height: 500px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 15.5%;
+    transition: 0.3s;
+
+}
+
+.topBar span {
+
+    margin-right: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color:#333333;
+
+}
+
+.topBar img {
+
+    margin-right: 10px;
+
+}
+
+.menu {
 
     position: fixed;
     height: 100vh;
@@ -27,20 +60,20 @@ nav.menu {
 
 }
 
-nav.retract {
+.retract {
 
     width: 80px;
 
 }
 
-nav.retract .items {
+.retract .items {
 
     transition: 0.3s;
     width: 55px;
 
 }
 
-nav.retract .items span {
+.retract .items span {
 
     transition: 0.3s;
     margin-left: 30px;
@@ -48,7 +81,7 @@ nav.retract .items span {
 
 }
 
-nav.retract .logo span {
+.retract .logo span {
 
     transition: 0.3s;
     margin-left: 30px;
@@ -56,12 +89,13 @@ nav.retract .logo span {
 
 }
 
-nav.retract .arrow {
+.retract .arrow {
 
-    margin-left: 20px;
+    margin-left: 22px;
+
 }
 
-nav.retract #arrowLeft {
+.retract #arrowLeft {
 
     transform: rotate(180deg);
 
@@ -94,7 +128,7 @@ ul {
 
 }
 
-ul li.items {
+.items {
 
     width: 172px;
     padding: 7px;
@@ -106,13 +140,13 @@ ul li.items {
 
 }
 
-ul li.colorItems {
+.colorItems {
 
     background: rgb(0, 182, 63, 0.3);
 
 }
 
-ul li.items a {
+.items a {
 
     display: flex;
     align-items: center;
@@ -126,13 +160,14 @@ ul li.items a {
 
 }
 
-ul li.items span {
+.items span {
 
     margin-left: 15px;
 
 }
 
-div.arrow {
+.arrow {
+
     display:flex;
     align-items: center;
     width: 40px;
