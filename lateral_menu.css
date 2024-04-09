@@ -9,42 +9,9 @@
 
 .containerHome {
 
-    display: grid;
-    height: 100vh;
-    background-color: #fafffc;
-    overflow: hidden;
-
-}
-
-.content {
-    
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.3px solid #333333;
-    width: 82%;
-    height: 500px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    margin-left: 15.5%;
-    transition: 0.3s;
-
-}
-
-.topBar span {
-
-    margin-right: 20px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color:#333333;
-
-}
-
-.topBar img {
-
-    margin-right: 10px;
+    height: 100vh;
+    width: 100%;
 
 }
 
@@ -52,7 +19,7 @@
 
     position: fixed;
     height: 100vh;
-    width: 200px;
+    width: 13%;
     border-radius: 0 25px 25px 0;
     background: linear-gradient(180deg, #012C10, #067a2f);
     overflow: hidden;
@@ -62,14 +29,14 @@
 
 .retract {
 
-    width: 80px;
+    width: 5%;
 
 }
 
 .retract .items {
 
     transition: 0.3s;
-    width: 55px;
+    width: 48px;
 
 }
 
@@ -130,7 +97,7 @@ ul {
 
 .items {
 
-    width: 172px;
+    width: 165px;
     padding: 7px;
     border-radius: 0 10px 10px 0;
     margin-top: 25px;
@@ -150,7 +117,7 @@ ul {
 
     display: flex;
     align-items: center;
-    margin-left: 17px;
+    margin-left: 16px;
     text-decoration: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 16px;
@@ -181,5 +148,77 @@ ul {
 
     transition: 0.3s;
     cursor: pointer;
+
+}
+
+.content {
+
+    display: flex;
+    justify-content: center;
+    margin-left: 13%;
+    width: 87%;
+    height: 100vh;
+    transition: 0.3s;
+
+}
+
+.expand {
+
+    margin-left: 5%;
+    width: 95%;
+
+}
+
+.expand .content {
+      
+}
+
+.topBar {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top:18px;
+    width: 95%;
+    height: 50px;
+    border: 0.1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 5px 0 5px 0;
+
+}
+
+.bell {
+
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+
+}
+
+.menu_User {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+    
+
+}
+
+.topBar p {
+
+    margin-left: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size:12px;
+    color: #333333;
+
+}
+
+.topBar input {
+
+    border-radius: 50%;
 
 }

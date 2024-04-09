@@ -42,10 +42,10 @@ function clear() {
 
 }
 
-register.addEventListener('click', function (event) {
-    event.preventDefault();
+register.addEventListener('click', function () {
 
     send_register();
     clear();
+    
 });
 
