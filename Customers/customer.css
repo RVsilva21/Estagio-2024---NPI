@@ -137,6 +137,7 @@ ul {
 
     display: flex;
     align-items: center;
+    margin-bottom: auto;
     width: 40px;
     margin: 165px 0px 15px 145px;
     overflow: hidden;
@@ -170,7 +171,7 @@ ul {
 
 }
 
-.expand .content {}
+.expand .content{}
 
 
 .topBar {
@@ -258,9 +259,9 @@ ul {
     display: flex;
     align-items: center;
     height: 50px;
-    padding: 15px;
-    width: 95%;
+    width: 97%;
     border-bottom: 0.1px solid #d9d9d9;
+    padding: 10px 0 10px 0;
 
 }
 
@@ -270,8 +271,6 @@ ul {
     align-items: center;
     width: auto;
     height: 50px;
-    margin-right: 70%;
-
 }
 
 .search input {
@@ -281,7 +280,7 @@ ul {
     outline: none;
     width: 200px;
     height: 20px;
-    padding: 5px;
+    padding: 5.5px;
     background: #fafffc;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
@@ -295,18 +294,23 @@ ul {
 
 }
 
-.search img {
+.search span {
 
     border: 0.1px solid #067a2f;
     border-radius: 0 5px 5px 0;
     background-color: #067a2f;
-    padding: 7.5px;
+    padding: 7.8px;
     cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color:#fff;
+    text-align: center;
 
 }
 
 
-.search img:hover {
+.search span:hover {
 
     border: 0.1px solid #04a13b;
     background: #04a13b;
@@ -317,6 +321,7 @@ ul {
 
     border: none;
     outline: none;
+    margin-left: auto;
     border-radius: 5px;
     width: 100px;
     height: 35px;
@@ -335,11 +340,143 @@ button:hover {
 
 }
 
-/*.backgroundActiveModal {
+.Modal {
 
+    display: flex;
+    justify-content: center;
+    align-content:center;
     width: 100%;
     height: 100%;
-    background: rgb(51, 51, 51,0.5);
-    z-index: 1;
+    background: rgb(51, 51, 51,0.7);
+    display: none;
+    transition: 0.5s;
+    z-index: 5;
+}
 
-}*/
+.Modal .containerForms {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 35%;
+    height:auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.containerForms a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    max-width: 100%;
+    padding: 10px 25px 10px 25px;
+    background-color: #067a2f;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.containerForms a > img {
+
+    margin-left: auto;
+    cursor: pointer;
+
+}
+
+.Modal .formsCustomer {
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0px 0px 0px;
+
+}
+
+
+.formsCustomer label {
+
+    margin-bottom: 5px;
+
+}
+
+.formsCustomer .field {
+
+    display: grid;
+    margin:15px auto;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.formsCustomer .field input{
+    
+    width: 200px;
+    outline:none;
+    border: 0.3px solid #d9d9d9;
+    border-radius: 5px;
+    background: #fafffc;
+    padding: 7px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.formsCustomer .field input:focus{
+    
+    border-color: #067a2f;
+
+}
+
+.formsCustomer .btnSave {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:40px 0px 0px 0px;
+    padding: 10px;
+    border-top: 0.3px solid #d9d9d9;
+    flex-grow: 1;
+    width: 100%;
+
+}
+
+.formsCustomer button {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #067a2f;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formsCustomer button:focus {
+
+    background: #04a13b;
+
+}
+
+.formsCustomer button:hover {
+
+    background: #04a13b;
+
+}
