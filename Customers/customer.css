@@ -278,7 +278,7 @@ ul {
     border: 0.1px solid #d9d9d9;
     border-radius: 5px 0 0 5px;
     outline: none;
-    width: 200px;
+    width: 300px;
     height: 20px;
     padding: 5.5px;
     background: #fafffc;
@@ -297,7 +297,7 @@ ul {
 .search span {
 
     border: 0.1px solid #067a2f;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px 5px 5px 5px;
     background-color: #067a2f;
     padding: 7.8px;
     cursor: pointer;
@@ -340,7 +340,7 @@ button:hover {
 
 }
 
-.Modal {
+.ModalCreate {
 
     display: flex;
     justify-content: center;
@@ -349,11 +349,22 @@ button:hover {
     height: 100%;
     background: rgb(51, 51, 51,0.7);
     display: none;
-    transition: 0.5s;
     z-index: 5;
 }
 
-.Modal .containerForms {
+.ModalEdit {
+
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51,0.7);
+    display: none;
+    z-index: 5;
+}
+
+.ModalCreate .containerFormsC {
 
     display: flex;
     justify-content: center;
@@ -362,13 +373,48 @@ button:hover {
     flex-direction: column;
     width: 35%;
     height:auto;
+    overflow: hidden;
     background: #fff;
     border-radius: 10px;
-    overflow: hidden;
+    animation: appearing 0.3s ease-in-out;
 
 }
 
-.containerForms a {
+.ModalEdit .containerFormsD {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 35%;
+    height:auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    animation: appearing 0.3s ease-in-out;
+
+}
+
+@keyframes appearing{
+
+    from{
+
+        opacity: 0%;
+        transform: scale(0.1);
+
+    }
+
+    to{
+
+        opacity: 100%;
+        transform: scale(1);
+
+    }
+
+}
+
+.containerFormsC a {
 
     display: flex;
     align-items: center;
@@ -384,14 +430,49 @@ button:hover {
 
 }
 
-.containerForms a > img {
+.containerFormsD a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    max-width: 100%;
+    padding: 10px 25px 10px 25px;
+    background-color: #067a2f;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.containerFormsC a > img {
 
     margin-left: auto;
     cursor: pointer;
 
 }
 
-.Modal .formsCustomer {
+.containerFormsD a > img {
+
+    margin-left: auto;
+    cursor: pointer;
+
+}
+
+.ModalCreate .formsCustomerC {
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0px 0px 0px;
+
+}
+
+.ModalEdit .formsCustomerD {
 
     display: flex;
     align-items:center;
@@ -404,23 +485,23 @@ button:hover {
 }
 
 
-.formsCustomer label {
+.formsCustomerC label {
 
     margin-bottom: 5px;
 
 }
 
-.formsCustomer .field {
+.formsCustomerC .field {
 
     display: grid;
     margin:15px auto;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
 
 }
 
-.formsCustomer .field input{
+.formsCustomerC .field input{
     
     width: 200px;
     outline:none;
@@ -429,18 +510,18 @@ button:hover {
     background: #fafffc;
     padding: 7px;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
 
 }
 
-.formsCustomer .field input:focus{
+.formsCustomerC .field input:focus{
     
     border-color: #067a2f;
 
 }
 
-.formsCustomer .btnSave {
+.formsCustomerC .btnSave {
 
     display: flex;
     align-items: center;
@@ -453,7 +534,7 @@ button:hover {
 
 }
 
-.formsCustomer button {
+.formsCustomerC button {
 
     border: none;
     border-radius: 5px;
@@ -469,14 +550,337 @@ button:hover {
 
 }
 
-.formsCustomer button:focus {
+
+.formsCustomerC button:focus {
 
     background: #04a13b;
 
 }
 
-.formsCustomer button:hover {
+.formsCustomerC button:hover {
 
     background: #04a13b;
+
+}
+
+
+.formsCustomerD label {
+
+    margin-bottom: 5px;
+
+}
+
+.formsCustomerD .field {
+
+    display: grid;
+    margin:15px auto;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.formsCustomerD .field input{
+    
+    width: 200px;
+    outline:none;
+    border: 0.3px solid #d9d9d9;
+    border-radius: 5px;
+    background: #fafffc;
+    padding: 7px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.formsCustomerD .field input:focus{
+    
+    border-color: #067a2f;
+
+}
+
+.formsCustomerD .btnSave {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:40px 0px 0px 0px;
+    padding: 10px;
+    border-top: 0.3px solid #d9d9d9;
+    flex-grow: 1;
+    width: 100%;
+
+}
+
+.btnSave span {
+
+margin: 0 10px;
+
+}
+
+.formsCustomerD button.saves {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #067a2f;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formsCustomerD button.cancel {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #EC0202;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formsCustomerD button.saves:focus {
+
+    background: #04a13b;
+
+}
+
+.formsCustomerD button.saves:hover {
+
+    background: #04a13b;
+
+}
+
+.formsCustomerD button.cancel:focus {
+
+    background: #f62828;
+
+}
+
+.formsCustomerD button.cancel:hover {
+
+    background: #f62828;
+
+}
+
+.tableCustomer {
+
+    position: sticky;
+    display: flex;
+    margin-top: 20px;
+    width: 98%;
+    padding: 10px 0px 10px 0px;
+    overflow:scroll;
+
+}
+
+::-webkit-scrollbar {
+
+    height: 8px;
+    width: 8px;
+    background: transparent;
+    border-radius: 5px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: #d9d9d9;
+    border-radius: 10px;
+
+}
+
+
+.tableCustomer table {
+
+    border-collapse: separate;
+    border-spacing: 5px;
+    width: 100%;
+    text-align: center;
+
+}
+
+tr:nth-of-type(even) {
+
+    background: #f7f7f7;
+
+}
+
+th {
+
+    border-radius: 5px;
+    padding: 7px;
+    background: #067a2f;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: #fff;
+
+}
+
+td {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+td.editCustomer span {
+
+    margin: 0 5px;
+
+}
+
+td > .edit, .delete {
+
+    cursor: pointer;
+
+}
+
+tbody.bodyTable {
+
+    transition: 1.5s;
+    opacity: 0;
+
+}
+
+.ModalDelete {
+
+    
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51,0.7);
+    display: none;
+    z-index: 5;
+
+}
+
+.ModalDelete > .DeleteConfirm {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0 0 32%;
+    border-radius: 10px;
+    background: #fff;
+    width: 35%;
+    height: 26%;
+    animation: appearing 0.3s ease-in-out;
+    overflow: hidden;
+
+}
+
+.DeleteConfirm > section {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0 10px 20px;
+    background-color: #067a2f;
+    width: 100%;
+
+}
+
+.DeleteConfirm > h3 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    padding: 20px 0 5px 0;
+
+}
+
+.DeleteConfirm > h5 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #7e7b7b;
+    padding: 0 0 20px 0;
+
+}
+
+.ActionsDelete {
+
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 0.3px solid #d9d9d9;
+    width: 100%;
+}
+
+.ActionsDelete > span {
+
+    margin: 0 10px;
+
+}
+
+.ActionsDelete > button#confirmDelete {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #067a2f;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.ActionsDelete > button#deny {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #EC0202;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.ActionsDelete > button#confirmDelete:focus {
+
+    background: #04a13b;
+
+}
+
+.ActionsDelete > button#confirmDelete:hover {
+
+    background: #04a13b;
+
+}
+
+.ActionsDelete > button#deny:focus {
+
+    background: #f62828;
+
+}
+
+.ActionsDelete > button#deny:hover {
+
+    background: #f62828;
 
 }

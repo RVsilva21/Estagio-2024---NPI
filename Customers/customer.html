@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Customers/customer.css">
     <script src="/Customers/customer.js" defer></script>
-    <script src="/Customers/customerAPI.js" defer></script>
     <title>Zyon Energy | Customers</title>
 </head>
 
@@ -75,46 +74,123 @@
             <div class="new_customers">
                 <div class="top">
                     <section class="search">
-                        <input type="text">
-                        <span>Pesquisar</span>
+                        <!--<input id="input" type="text">-->
+                        <span id="searchC">Buscar Clientes</span>
                     </section>
                     <button id="btnNewCustomer">Novo Cliente</button>
                 </div>
+
+                <div class="tableCustomer">
+                    <table>
+                        <tbody class="header">
+                            <tr>
+                                <th scope="col" style="display:snone" id="id">Id</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Telefone</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Endereço</th>
+                                <th scope="col">Cidade</th>
+                                <th scope="col">Edições</th>
+                            </tr>
+                        </tbody>
+                        <tbody class="bodyTable">
+                        </tbody>
+                    </table>
+                </div>
         </section>
-        <div class="Modal">
-            <div class="containerForms">
-                <a><section>Novo Cliente</section>
-                <img id ="closer" src="/icons/botao-fechar 1.svg" id="arrowLeft" width="35" height="35">
-            </a>
-                <form class="formsCustomer" action="">
+        <div class="ModalCreate">
+            <div class="containerFormsC" id="containerModalCreate">
+                <a>
+                    <section>Novo Cliente</section>
+                    <img id="closerC" src="/icons/botao-fechar 1.svg" id="arrowLeft" width="35" height="35">
+                </a>
+                <form class="formsCustomerC" action="">
+
                     <div class="field">
                         <label>Nome</label>
-                        <input type="text" placeholder="Digite o nome">
-                    </div>
-                    <div class="field">
-                        <label>Telefone</label>
-                        <input type="tel" placeholder="Digite o telefone">
-                    </div>
-                    <div class="field">
-                        <label>Cidade</label>
-                        <input type="text" placeholder="Digite a cidade">
-                    </div>
-                    <div class="field">
-                        <label>E-mail</label>
-                        <input type="text" placeholder="Digite o e-mail">
+                        <input type="text" class="customer_name" placeholder="Ex: Digite o nome" required>
                     </div>
                     <div class="field">
                         <label>Tipo</label>
-                        <input type="text" placeholder="informe o tipo">
+                        <input type="text" class="customer_type" placeholder="Ex: Pessoa Física" required>
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="text" class="phone" placeholder="Digite o telefone" required>
+                    </div>
+                    <div class="field">
+                        <label>Cidade</label>
+                        <input type="text" class="city" placeholder="Digite a cidade" required>
+                    </div>
+                    <div class="field">
+                        <label>E-mail</label>
+                        <input type="text" class="e_mail" placeholder="Digite o e-mail" required>
                     </div>
                     <div class="field">
                         <label>Endereço</label>
-                        <input type="text" placeholder="Digite o endereço">
+                        <input type="text" class="address" placeholder="Digite o endereço" required>
                     </div>
                     <div class="btnSave">
-                        <button type="submit">Salvar</button>
+                        <button class="save" type="submit">Salvar</button>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="ModalEdit">
+            <div class="containerFormsD" id="containerModalEdit">
+                <a>
+                    <section>Editar Cliente</section>
+                    <img id="closerD" src="/icons/botao-fechar 1.svg" id="arrowLeft" width="35" height="35">
+                </a>
+                <form class="formsCustomerD" action="">
+
+                    <div class="field" style="display: none">
+                        <label>Id</label>
+                        <input type="text" class="idCustomersD" required>
+                    </div>
+                    <div class="field">
+                        <label>Nome</label>
+                        <input type="text" class="customer_nameD" placeholder="Ex: Digite o nome" required>
+                    </div>
+                    <div class="field">
+                        <label>Tipo</label>
+                        <input type="text" class="customer_typeD" placeholder="Ex: Pessoa Física" required>
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="text" class="phoneD" placeholder="Digite o telefone" required>
+                    </div>
+                    <div class="field">
+                        <label>Cidade</label>
+                        <input type="text" class="cityD" placeholder="Digite a cidade" required>
+                    </div>
+                    <div class="field">
+                        <label>E-mail</label>
+                        <input type="text" class="e_mailD" placeholder="Digite o e-mail" required>
+                    </div>
+                    <div class="field">
+                        <label>Endereço</label>
+                        <input type="text" class="addressD" placeholder="Digite o endereço" required>
+                    </div>
+                    <div class="btnSave">
+                        <button class="saves" id="submit" type="submit">Salvar</button>
+                        <span></span>
+                        <button class="cancel" type="">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ModalDelete">
+            <div class="DeleteConfirm">
+                <section>Deletar Cliente</section>
+                <h3>Deseja mesmo deletar esse cliente?</h3>
+                <h5>Cuidado, essa ação é irreversível!</h5>
+                <div class="ActionsDelete">
+                    <button id="confirmDelete">Sim</button>
+                    <span></span>
+                    <button id="deny">Não</button>
+                </div>
             </div>
         </div>
     </main>
