@@ -57,7 +57,7 @@ function addRows(result) {
         lineId += 1;
         row += `
         <tr id ="${lineId}">
-        <td class ="idCustomers"style="display:nones">${data[0]}</td>
+        <td class ="idCustomers"style="display:none">${data[0]}</td>
         <td class="customer_name">${data[1]}</td>
         <td class="phone">${data[3]}</td>
         <td class="e_mail">${data[5]}</td>
@@ -70,17 +70,10 @@ function addRows(result) {
         table.innerHTML = row;
     }
 }
-
-
 /*search.addEventListener('click', ()=> {   
     getCustomer(urlGet),
     table.style.opacity=1
 })*/
-
-window.addEventListener('load', () => {
-    getCustomer(urlGet);
-    table.style.opacity = 1;
-})
 
 
 
@@ -142,24 +135,6 @@ function fillEditModal(row) {
     modalEdit.style.display = 'block';
 }
 
-document.addEventListener('click', (e) => {
-    const target = e.target.closest('.edit');
-    if (target) {
-        const row = target.closest('tr');
-        fillEditModal(row);
-        if (row) {
-            const idElement = row.querySelector('.idCustomers');
-            if (idElement) {
-                const idCustomers = idElement.innerText;
-
-                formD.addEventListener('submit', () => {
-                    UpdateCustomer(idCustomers);
-                })
-            }
-        }
-    }
-})
-
 
 
 //Método PUT
@@ -190,7 +165,23 @@ async function UpdateCustomer(idCustomers) {
     console.log(result);
 }
 
+document.addEventListener('click', (e) => {
+    const target = e.target.closest('.edit');
+    if (target) {
+        const row = target.closest('tr');
+        fillEditModal(row);
+        if (row) {
+            const idElement = row.querySelector('.idCustomers');
+            if (idElement) {
+                const idCustomers = idElement.innerText;
 
+                formD.addEventListener('submit', () => {
+                    UpdateCustomer(idCustomers);
+                })
+            }
+        }
+    }
+})
 
 const cancel = document.querySelector('.cancel');
 const closerD = document.getElementById('closerD');
@@ -237,7 +228,8 @@ document.addEventListener('click', (el) => {
 
                 confirmDelete.addEventListener('click', () => {
                     deleteCustomer(idCustomers),
-                        modalDelete.style.display = 'none';
+                        modalDelete.style.display = 'none',
+                        window.location.reload(true);
                 });
             }
         }
@@ -246,4 +238,10 @@ document.addEventListener('click', (el) => {
 
 deny.addEventListener('click', () => {
     modalDelete.style.display = 'none';
+})
+
+
+window.addEventListener('load', () => {
+    getCustomer(urlGet);
+    table.style.opacity = 1;
 })

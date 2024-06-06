@@ -25,13 +25,13 @@
                     </a>
                 </li>
                 <li class="items colorItems">
-                    <a href="#">
+                    <a href="/Customers/customer.html">
                         <img src="/icons/Customer.svg" width="30" height="30">
                         <span>Clientes</span>
                     </a>
                 </li>
                 <li class="items">
-                    <a href="#">
+                    <a href="/Project/project.html">
                         <img src="/icons/Projects.svg" width="30" height="30">
                         <span>Projetos</span>
                     </a>
@@ -75,7 +75,7 @@
                 <div class="top">
                     <section class="search">
                         <!--<input id="input" type="text">-->
-                        <span id="searchC">Buscar Clientes</span>
+                        <!--<span id="searchC">Buscar Clientes</span>-->
                     </section>
                     <button id="btnNewCustomer">Novo Cliente</button>
                 </div>
@@ -84,7 +84,7 @@
                     <table>
                         <tbody class="header">
                             <tr>
-                                <th scope="col" style="display:snone" id="id">Id</th>
+                                <th scope="col" style="display:none" id="id">Id</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Telefone</th>
                                 <th scope="col">E-mail</th>
@@ -176,7 +176,7 @@
                     <div class="btnSave">
                         <button class="saves" id="submit" type="submit">Salvar</button>
                         <span></span>
-                        <button class="cancel" type="">Cancelar</button>
+                        <button class="cancel" type="button">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -187,7 +187,7 @@
                 <h3>Deseja mesmo deletar esse cliente?</h3>
                 <h5>Cuidado, essa ação é irreversível!</h5>
                 <div class="ActionsDelete">
-                    <button id="confirmDelete">Sim</button>
+                    <button id="confirmDelete" type="submit">Sim</button>
                     <span></span>
                     <button id="deny">Não</button>
                 </div>
