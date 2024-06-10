@@ -70,10 +70,6 @@ function addRows(result) {
         table.innerHTML = row;
     }
 }
-/*search.addEventListener('click', ()=> {   
-    getCustomer(urlGet),
-    table.style.opacity=1
-})*/
 
 
 
