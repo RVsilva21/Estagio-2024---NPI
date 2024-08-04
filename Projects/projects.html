@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons svg/Green Icon.svg" />
+    <link rel="stylesheet" href="/Projects/projects.css">
+    <script src="/Projects/projects.js" defer></script>
+    <title>Zyon Energy | Projects</title>
+</head>
+
+<body>
+    <main class="containerHome">
+
+        <nav class="menu">
+            <div class="logo">
+                <img src="/assets/images/Logo Zyon White.png" height="64" width="52">
+                <span>Zyon&nbsp<b>Energy</b></span>
+            </div>
+            <ul>
+                <li class="items">
+                    <a href="#">
+                        <img src="/assets/icons/Resume.svg" width="30" height="30">
+                        <span>Resumo</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Customers/customer.html">
+                        <img src="/assets/icons/Customer.svg" width="30" height="30">
+                        <span>Clientes</span>
+                    </a>
+                </li>
+                <li class="items colorItems">
+                    <a href="#">
+                        <img src="/assets/icons/Projects.svg" width="30" height="30">
+                        <span>Projetos</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="#">
+                        <img src="/assets/icons/Kits.svg" width="30" height="30">
+                        <span>Kits</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="#">
+                        <img src="/assets/icons/Analytic.svg" width="30" height="30">
+                        <span>Relatórios</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="#">
+                        <img src="/assets/icons/Settings.svg" width="30" height="30">
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="arrow">
+                <img src="/assets/icons/Arrow Left.svg" id="arrowLeft" width="35" height="35">
+            </div>
+        </nav>
+
+        <section class="content">
+            <div class="topBar">
+                <div class="bell">
+                    <img src="/assets/icons/bell.svg" width="15" height="15">
+                </div>
+                <div class="menu_User">
+                    <input type="image" src="/assets/images/Perfil Linkedin.jpeg" width="30" height="30">
+                    <p>Renan Victor</p>
+                </div>
+            </div>
+
+            <div class="calculate">
+                <section>
+                    <li>
+                        <label name="Grupo">Selecione o Grupo
+                            <select name="" id="">
+                                <option></option>
+                                <option>Grupo B</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Cidade
+                            <select name="" id="city">
+                                <option></option>
+                                <option>Londrina PR</option>
+                                <option>São Paulo SP</option>
+                                <option>Belo Horizonte MG</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Índice de Irradiação (Wh/m²)
+                            <input type="number" id="irradiation" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Selecione a Orientação
+                            <select name="" id="orientation">
+                                <option></option>
+                                <option>Norte</option>
+                                <option>Nordeste</option>
+                                <option>Sul</option>
+                                <option>Suldeste</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Taxa de Perda (%)
+                            <input type="number" id="lostRate" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Desempenho Esperado (%)
+                            <input type="number" id="performance" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Concessionária
+                            <select name="" id="concessionaire">
+                                <option></option>
+                                <option>ENEL SP</option>
+                                <option>COPEL-DIS</option>
+                                <option>CEMIG-D</option>
+                                <option>CPFL Paulista</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Tarifa de Energia (R$)
+                            <input type="number"id="tariff" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>TUSD Fio B
+                            <input type="number" id="tusd" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Iluminação Pública (R$)
+                            <input type="number" id="streetLighting" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Consumo Médio Mensal (kWh/mês)
+                            <input type="number" id="consumption">
+                        </label>
+                    </li>
+                    <li>
+                        <label>Geração Média Mensal (kWh/mês)
+                            <input type="number" id="averageGenerate" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Potência dos Módulos (W)
+                            <select id="modulePerformance">
+                                <option></option>
+                                <option>550</option>
+                                <option>545</option>
+                                <option>505</option>
+                                <option>600</option>
+                                <option>575</option>
+                                <option>540</option>
+                                <option>570</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Quantidade de Módulos
+                            <input type="number" id="moduleQuantity" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Potência do Sistema (kWp)
+                            <input type="number" id="systemPower" readonly>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Tipo de Projeto
+                            <select name="" id="project">
+                                <option></option>
+                                <option>Residencial</option>
+                                <option>Comercial</option>
+                                <option>Industrial</option>
+                                <option>Rural</option>
+                            </select>
+                        </label>
+                        <button id="calc">Calcular</button>
+                    </li>
+                </section>
+            </div>
+    </main>
+</body>
+
+</html>

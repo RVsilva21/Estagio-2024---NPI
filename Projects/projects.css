@@ -20,7 +20,6 @@
     position: fixed;
     height: 100vh;
     width: 13%;
-    border-radius: 0 25px 25px 0;
     background: linear-gradient(180deg, #012C10, #067a2f);
     overflow: hidden;
     transition: 0.3s;
@@ -135,11 +134,11 @@ ul {
 
 .arrow {
 
-    margin-bottom: auto;
-    display:flex;
+    display: flex;
     align-items: center;
+    margin-bottom: auto;
     width: 40px;
-    margin:165px 0px 15px 145px;
+    margin: 165px 0px 15px 145px;
     overflow: hidden;
     transition: 0.3s;
 
@@ -155,8 +154,8 @@ ul {
 .content {
 
     display: flex;
-    justify-content: center;
-    position:fixed;
+    flex-direction: column;
+    position: fixed;
     margin-left: 13%;
     width: 87%;
     height: 100vh;
@@ -171,9 +170,8 @@ ul {
 
 }
 
-.expand .content {
-      
-}
+.expand .content{}
+
 
 .topBar {
 
@@ -238,4 +236,121 @@ ul {
 
     background: #d9d9d9;
 
+}
+
+
+/*DIV of the fields to power plant's dimensity*/
+.calculate {
+
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 80%;
+    margin: 18px auto;
+    border-radius: 10px;
+    border: 0.1px solid #d9d9d9;
+    overflow: hidden;
+    padding: 10px;
+
+}
+
+.calculate section {
+
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.calculate li {
+
+    font-family: "IBM Plex Sans", sans-serif;
+    list-style-type: none;
+}
+
+.calculate label {
+
+    font-size: 12.5px;
+}
+
+.calculate input {
+
+    font-family: "IBM Plex Sans", sans-serif;
+    width: 200px;
+    display: block;
+    outline-color: #067a2f;
+    border-radius: 5px;
+    padding: 5px;
+    background: #fafafa;
+    border: 0.5px solid #d9d9d9;
+}
+
+.calculate select {
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12.5px;
+    width: 200px;
+    display: block;
+    outline-color: #067a2f;
+    border-radius: 5px;
+    padding: 5px;
+    background: #fafafa;
+    border: 0.5px solid #d9d9d9;
+}
+
+
+/*Some fields of the calculator*/
+#lostRate {
+
+    outline: none;
+    background: #ededed;
+}
+
+#performance {
+
+    outline: none;
+    background: #ededed;
+}
+
+#tariff {
+
+    outline: none;
+    background: #ededed;
+}
+
+#tusd {
+
+    outline: none;
+    background: #ededed;
+}
+
+#streetLighting {
+
+    outline: none;
+    background: #ededed;
+}
+
+#irradiation {
+
+    outline: none;
+    background: #ededed;
+}
+
+#averageGenerate {
+
+    outline: none;
+    background: #ededed;
+}
+
+#systemPower {
+
+    outline: none;
+    background: #ededed;
+}
+
+#moduleQuantity {
+
+    outline: none;
+    background: #ededed;
 }

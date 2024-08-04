@@ -20,7 +20,6 @@
     position: fixed;
     height: 100vh;
     width: 13%;
-    border-radius: 0 25px 25px 0;
     background: linear-gradient(180deg, #012C10, #067a2f);
     overflow: hidden;
     transition: 0.3s;
@@ -135,11 +134,11 @@ ul {
 
 .arrow {
 
-    margin-bottom: auto;
-    display:flex;
+    display: flex;
     align-items: center;
+    margin-bottom: auto;
     width: 40px;
-    margin:165px 0px 15px 145px;
+    margin: 165px 0px 15px 145px;
     overflow: hidden;
     transition: 0.3s;
 
@@ -155,8 +154,8 @@ ul {
 .content {
 
     display: flex;
-    justify-content: center;
-    position:fixed;
+    flex-direction: column;
+    position: fixed;
     margin-left: 13%;
     width: 87%;
     height: 100vh;
@@ -171,9 +170,8 @@ ul {
 
 }
 
-.expand .content {
-      
-}
+.expand .content{}
+
 
 .topBar {
 
@@ -237,5 +235,20 @@ ul {
 .menu_User:hover {
 
     background: #d9d9d9;
+
+}
+
+
+.new_customers {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: 80%;
+    margin: 18px auto;
+    border-radius: 10px;
+    border: 0.1px solid #d9d9d9;
 
 }
