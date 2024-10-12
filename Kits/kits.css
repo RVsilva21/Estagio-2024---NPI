@@ -429,8 +429,8 @@ ul {
 
 .ModalKit .FormsRegisterKit {
 
-    width: 35%;
-    height: 90%;
+    width: 36%;
+    height: auto;
     margin: 2% auto;
 
     border-radius: 10px;
@@ -462,6 +462,7 @@ ul {
 
     display: flex;
     align-items: center;
+    vertical-align: middle;
 
     background: #067a2f;
 
@@ -482,7 +483,7 @@ ul {
     margin-right: 20px;
 
     font-weight: 300;
-    font-size: 28px;
+    font-size: 30px;
     color: #fff;
 
     cursor: pointer;
@@ -491,30 +492,34 @@ ul {
 
 .FormsRegisterKit > form {
 
-    width: 100%;
-    height: 100%;
+    width: 515px;
+    height: auto;
 
-    margin-top: 20px;
+    margin: 10px auto;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    column-gap: 20px;
+    row-gap: 30px;
+
     justify-content: center;
-    flex-wrap: wrap;
 
 }
 
 .FormsRegisterKit > form > div {
 
-    width: 40%;
-    height: 10%;
+    width: auto;
+    height: auto;
 
-    margin: 5px;
-
-    display: block;
+    display: flex;
     flex-direction: column;
 
 }
 
 .FormsRegisterKit > form > div > label {
+
+    margin-bottom: 5px;
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
@@ -529,8 +534,7 @@ ul {
     border-radius: 5px;
     outline: none;
 
-    display: inline-block;
-    width: 90%;
+    max-width: 100%;
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
@@ -549,11 +553,47 @@ ul {
 
 }
 
-.FormsRegisterKit > form > button {
+.FormsRegisterKit > div {
+
+    border-top: 0.1px solid #d9d9d9;
+
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 70px 0 0 0;
+
+    width: auto;
+    height: 40px;
+
+}
+
+.FormsRegisterKit > div > button {
 
     border: none;
+    border-radius: 5px;
 
-    width: 150px;
-    height: 25px;
+    outline: none;
+
+    padding: 10px;
+
+    width: 100px;
+    height: 40px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+
+    background: #067a2f;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.FormsRegisterKit > div > button:hover {
+
+    background: #036726;
 
 }

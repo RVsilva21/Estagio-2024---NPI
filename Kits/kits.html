@@ -17,52 +17,53 @@
             <div class="FormsRegisterKit">
                 <section>
                     <h2 id="h2">Cadastrar Kit</h2>
-                    <h1 id="closeModal">x</h1>
+                    <h2 id="closeModal">x</h2>
                 </section>
                 <form>
                     <div style="display: none;">
                         <label for="kitId">ID do Kit</label>
-                            <input type="text" placeholder="ID do Kit" id="r_kitId" style="display: nones;">   
+                        <input type="number" placeholder="ID do Kit" id="r_kitId" readonly>   
                     </div>
                     <div>
                         <label for="kitId">Descrição do Kit</label>
-                            <input type="text" placeholder="Descrição do Kit" id="r_decribe" style="display: nones;">
+                        <input type="text" placeholder="Descrição do Kit" id="r_decribe">
                     </div>
                     <div>
                         <label for="kitId">Valor do Kit (R$)</label>
-                            <input type="text" placeholder="Informe o Valor" id="r_kitValue" style="display: nones;">                       
+                        <input type="number" placeholder="Informe o Valor" id="r_kitValue" min="0">                       
                     </div>
                     <div>
                         <label for="kitId">Quantidade de Módulos</label>
-                            <input type="text" placeholder="Digite a Quantidade" id="r_moduleQuantity" style="display: nones;">
+                        <input type="number" placeholder="Digite a Quantidade" id="r_moduleQuantity" min="0">
                     </div>
                     <div>
                         <label for="kitId">Potência do Módulo (W)</label>
-                            <input type="text" placeholder="Digite a Potência" id="r_modulePower" style="display: nones;">
+                        <input type="number" placeholder="Digite a Potência" id="r_modulePower" min="0">
                     </div>
                     <div>
                         <label for="kitId">Marca do Módulo</label>
-                            <input type="text" placeholder="Informe a Marca" id="r_moduleBrand" style="display: nones;">
+                        <input type="text" placeholder="Informe a Marca" id="r_moduleBrand">
                     </div>
                     <div>
                         <label for="kitId">Quantidade de Inversores</label>
-                            <input type="text" placeholder="Digite a quantidade" id="r_inverterQuantity" style="display: nones;">
+                        <input type="number" placeholder="Digite a quantidade" id="r_inverterQuantity" min="0">
                     </div>
                     <div>
                         <label for="kitId">Potência do Inveror (kW)</label>
-                            <input type="text" placeholder="Digite a Potência" id="r_inverterPower" style="display: nones;">
+                        <input type="number" placeholder="Digite a Potência" id="r_inverterPower" min="0">
                     </div>
                     <div>
                         <label for="kitId">Marca do Inverdor</label>
-                            <input type="text" placeholder="Informe a Marca" id="r_inverterBrand" style="display: nones;">
+                        <input type="text" placeholder="Informe a Marca" id="r_inverterBrand">
                     </div>
                     <div>
                         <label for="kitId">Fornecedor</label>
-                            <input type="text" placeholder="Digite o Fornecedor" id="r_supplier" style="display: nones;">
+                        <input type="text" placeholder="Digite o Fornecedor" id="r_supplier">
                     </div>
-
-                    <button>Salvar</button>
                 </form>
+                <div>
+                    <button id="registerKit">Salvar</button>
+                </div>
             </div>
         </div>
 
