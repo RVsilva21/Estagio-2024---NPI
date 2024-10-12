@@ -160,6 +160,7 @@ ul {
     width: 87%;
     height: 100vh;
     transition: 0.3s;
+    overflow: scroll;
 
 }
 
@@ -249,18 +250,31 @@ ul {
     margin: 18px auto;
     border-radius: 10px;
     border: 0.1px solid #d9d9d9;
-    overflow: hidden;
-    padding: 10px;
-
+    padding: 10px 0 10px 0;
 }
 
 .calculate section {
 
     display: flex;
-    flex-wrap:wrap;
+    margin: 0 auto;
+    flex-wrap: wrap;
     gap: 20px;
+    width: 97%;
+    justify-content:space-between;
+}
+
+.calculate p {
+
+    background: #067a2f;
     width: 100%;
-    justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px 0 5px 5px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
 }
 
 .calculate li {
@@ -301,7 +315,7 @@ ul {
 
 
 /*Some fields of the calculator*/
-#lostRate {
+#lost_rate {
 
     outline: none;
     background: #ededed;
@@ -325,7 +339,7 @@ ul {
     background: #ededed;
 }
 
-#streetLighting {
+#public_lighting {
 
     outline: none;
     background: #ededed;
@@ -337,20 +351,497 @@ ul {
     background: #ededed;
 }
 
-#averageGenerate {
+#average_generation {
 
     outline: none;
     background: #ededed;
 }
 
-#systemPower {
+#system_power {
 
     outline: none;
     background: #ededed;
 }
 
-#moduleQuantity {
+#module_quantity {
 
     outline: none;
     background: #ededed;
+}
+
+
+/*Save Button*/
+#save {
+
+    margin: 0 auto;
+    margin-top: 50px;
+    
+}
+
+#save button {
+    
+    width: 100px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+
+    background: #067a2f;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+}
+
+#save button:hover {
+
+    background-color: #036124;
+}
+
+
+
+/*Accordion*/
+
+.accordion {
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 95%;
+    margin: 0 auto;
+
+    outline: none;
+    border-radius: 10px 10px 0 0;
+    background: #067a2f;
+    
+    border: 0.1px solid #067a2f;
+    padding: 15px 15px 15px 15px;
+
+    text-align: start;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+
+}
+
+.active, .accordion:hover {
+
+    background: #036124;
+}
+
+.panel {
+
+    display: flex;
+    flex-direction: column;
+    width: 92.75%;
+    margin: 0 auto;
+    padding: 10px 15px 10px 15px;
+
+    background-color: #f6f6f6;
+    border-radius: 0 0 10px 10px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+.accordion::after {
+
+    content: "+";
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    float: right;
+    margin-left: auto;
+}
+
+.active::after {
+
+    content: "-";
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+/*Header Project's Table*/
+
+.header table {
+
+    width: 100%;
+}
+
+.header th{
+
+    background: #012C10;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.header, .bodyProjects{
+
+    background: #fff;
+    color: #2e2e2e;
+    border-radius: 5px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.header, .bodyProjects td{
+
+    background: #fff;
+    color: #2e2e2e;
+    padding: 5px;
+    border-radius: 5px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.bodyProjects td#editProjects span {
+
+    margin: 0 5px;
+
+}
+
+.bodyProjects td > .edit, .delete {
+
+    cursor: pointer;
+
+}
+
+
+
+/*Modal UpdateProject*/
+#ModalUpdateProject {
+
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: rgb(51, 51, 51,0.7);
+    z-index: 5;
+
+    display: none;
+}
+
+#ModalUpdateProject #fieldsModalProject {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin: 0 auto;
+    flex-direction: column;
+    width: 65%;
+    height:auto;
+
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    animation: appearing 0.3s ease-in-out;
+}
+
+@keyframes appearing{
+
+    from{
+
+        opacity: 0%;
+        transform: scale(0.1);
+
+    }
+
+    to{
+
+        opacity: 100%;
+        transform: scale(1);
+
+    }
+
+}
+
+#fieldsModalProject a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    max-width: 100%;
+    padding: 10px 25px 10px 25px;
+    background-color: #067a2f;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+#fieldsModalProject a > img {
+
+    margin-left: auto;
+    cursor: pointer;
+
+}
+
+.formsModalProject {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formsModalProject .fields {
+
+    display: grid;
+    margin: 15px auto;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.formsModalProject .fields input{
+    
+    width: 200px;
+    outline:none;
+    border: 0.3px solid #d9d9d9;
+    border-radius: 5px;
+    background: #fafffc;
+    padding: 7px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.formsModalProject label {
+
+    margin-bottom: 5px;
+
+}
+
+.formsModalProject .fields input:focus{
+    
+    border-color: #067a2f;
+
+}
+
+.formsModalProject .btnSave {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:40px 0px 0px 0px;
+    padding: 10px;
+    border-top: 0.3px solid #d9d9d9;
+    flex-grow: 1;
+    width: 100%;
+
+}
+
+.btnSave span {
+
+margin: 0 10px;
+
+}
+
+.formsModalProject button#saves {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #067a2f;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formsModalProject button#cancel {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #EC0202;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formsModalProject button#saves:focus {
+
+    background: #04a13b;
+
+}
+
+.formsModalProject button#saves:hover {
+
+    background: #04a13b;
+
+}
+
+.formsModalProject button#cancel:focus {
+
+    background: #f62828;
+
+}
+
+.formsModalProject button#cancel:hover {
+
+    background: #f62828;
+
+}
+
+
+
+/*Modal Delete*/
+.ModalDeleteProject {
+
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51,0.7);
+    display: none;
+    z-index: 5;
+
+}
+
+.ModalDeleteProject .DeleteConfirmProject {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0 0 32%;
+    border-radius: 10px;
+    background: #fff;
+    width: 35%;
+    height: 26%;
+    animation: appearing 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.DeleteConfirmProject > section {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0 10px 20px;
+    background-color: #067a2f;
+    width: 100%;
+}
+
+.DeleteConfirmProject > h3 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    padding: 20px 0 5px 0;
+
+}
+
+.DeleteConfirmProject > h5 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #7e7b7b;
+    padding: 0 0 20px 0;
+
+}
+
+.ActiveDeleteProject {
+
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 0.3px solid #d9d9d9;
+    width: 100%;
+}
+
+.ActiveDeleteProject > span {
+
+    margin: 0 10px;
+
+}
+
+.ActiveDeleteProject > button#c_Delete {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #067a2f;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.ActiveDeleteProject > button#d_delete {
+
+    border: none;
+    border-radius: 5px;
+    background-color: #EC0202;
+    width: 100px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.ActiveDeleteProject > button#c_Delete:focus {
+
+    background: #04a13b;
+
+}
+
+.ActiveDeleteProject > button#c_Delete:hover {
+
+    background: #04a13b;
+
+}
+
+.ActiveDeleteProject > button#d_delete:focus {
+
+    background: #f62828;
+
+}
+
+.ActiveDeleteProject > button#d_delete:hover {
+
+    background: #f62828;
+
 }

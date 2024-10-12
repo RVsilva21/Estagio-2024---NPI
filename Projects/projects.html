@@ -13,6 +13,115 @@
 <body>
     <main class="containerHome">
 
+        <div id="ModalUpdateProject">
+            
+            <div id="fieldsModalProject">
+                <a>
+                    <section>Editar Projeto</section>
+                    <img id="closer_edit" src="/assets/icons/botao-fechar 1.svg" id="arrowLeft" width="35" height="35">
+                </a>
+                <form class="formsModalProject" action="">
+
+                    <div class="fields" style="display: none">
+                        <label>Id</label>
+                        <input type="text" class="project_id_ed">
+                    </div>
+                    <div class="fields">
+                        <label>Cliente</label>
+                        <input type="text" class="name_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Selecione o Grupo</label>
+                        <input type="text" class="group_project_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Cidade</label>
+                        <input type="text" class="city_project_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Índice de Irradiação (Wh/m²)</label>
+                        <input type="text" class="irradiation_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Orientação</label>
+                        <input type="text" class="orientation_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Taxa de Perda (%)</label>
+                        <input type="text" class="lost_rate_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Desempenho Esperado (%)</label>
+                        <input type="text" class="performance_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Concessionária</label>
+                        <input type="text" class="concessionaire_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Tarifa de Energia (R$)</label>
+                        <input type="text" class="tariff_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>TUSD</label>
+                        <input type="text" class="tusd_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Iluminação Pública (R$)</label>
+                        <input type="text" class="public_lighting_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Consumo Médio Mensal (kWh/mês)</label>
+                        <input type="text" class="average_consumption_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Potência dos Módulos (W)</label>
+                        <input type="text" class="module_power_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Geração Média Mensal (kWh/mês)</label>
+                        <input type="text" class="average_generation_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Quantidade de Módulos</label>
+                        <input type="text" class="module_quantity_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Potência do Sistema (kWp)</label>
+                        <input type="text" class="system_power_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Tipo de Projeto</label>
+                        <input type="text" class="type_project_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Kit</label>
+                        <input type="text" class="kit_ed" placeholder="">
+                    </div>
+                    <div class="fields">
+                        <label>Valor do Sistema</label>
+                        <input type="text" class="system_values_ed" placeholder="">
+                    </div>
+                    <div class="btnSave">
+                        <button id="saves" type="submit">Salvar</button>
+                        <span></span>
+                        <button id="cancel" type="button">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ModalDeleteProject">
+            <div class="DeleteConfirmProject">
+                <section>Deletar Projeto</section>
+                <h3>Deseja mesmo deletar esse projeto?</h3>
+                <h5>Cuidado, essa ação é irreversível!</h5>
+                <div class="ActiveDeleteProject">
+                    <button id="c_Delete">Sim</button>
+                    <span></span>
+                    <button id="d_delete">Não</button>
+                </div>
+            </div>
+        </div>
         <nav class="menu">
             <div class="logo">
                 <img src="/assets/images/Logo Zyon White.png" height="64" width="52">
@@ -20,7 +129,7 @@
             </div>
             <ul>
                 <li class="items">
-                    <a href="#">
+                    <a href="http://127.0.0.1:5501/Home/home.html">
                         <img src="/assets/icons/Resume.svg" width="30" height="30">
                         <span>Resumo</span>
                     </a>
@@ -32,25 +141,25 @@
                     </a>
                 </li>
                 <li class="items colorItems">
-                    <a href="#">
+                    <a href="http://127.0.0.1:5501/Projects/projects.html">
                         <img src="/assets/icons/Projects.svg" width="30" height="30">
                         <span>Projetos</span>
                     </a>
                 </li>
                 <li class="items">
-                    <a href="#">
+                    <a href="http://127.0.0.1:5501/Kits/kits.html">
                         <img src="/assets/icons/Kits.svg" width="30" height="30">
                         <span>Kits</span>
                     </a>
                 </li>
                 <li class="items">
-                    <a href="#">
+                    <a href="http://127.0.0.1:5501/Analytics/analytics.html">
                         <img src="/assets/icons/Analytic.svg" width="30" height="30">
                         <span>Relatórios</span>
                     </a>
                 </li>
                 <li class="items">
-                    <a href="#">
+                    <a href="http://127.0.0.1:5501/Settings/settings.html">
                         <img src="/assets/icons/Settings.svg" width="30" height="30">
                         <span>Configurações</span>
                     </a>
@@ -72,11 +181,32 @@
                 </div>
             </div>
 
+            <button class="accordion" id="borderAccordion">Projetos</button>
+            <div class="panel">
+                <table>
+                    <tbody class="header">
+                    <tr>
+                        <th scope="col" style="display: none;">Id Projeto</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Potência Projeto (kWp)</th>
+                        <th scope="col">Geração Média (kWh/mês)</th>
+                        <th scope="col">Quantidade Módulos</th>
+                        <th scope="col">Potência Módulos (W)</th>
+                        <th scope="col">Valor do Projeto (R$)</th>
+                        <th scope="col">Editar</th>
+                    </tr>
+                    </tbody>
+                    <tbody class="bodyProjects">
+                    </tbody>
+                </table>
+            </div>
+
             <div class="calculate">
                 <section>
+                    <p id="title">Calculadora</p>
                     <li>
                         <label name="Grupo">Selecione o Grupo
-                            <select name="" id="">
+                            <select name="" id="group_project">
                                 <option></option>
                                 <option>Grupo B</option>
                             </select>
@@ -84,7 +214,7 @@
                     </li>
                     <li>
                         <label>Cidade
-                            <select name="" id="city">
+                            <select name="" id="city_project">
                                 <option></option>
                                 <option>Londrina PR</option>
                                 <option>São Paulo SP</option>
@@ -94,7 +224,7 @@
                     </li>
                     <li>
                         <label>Índice de Irradiação (Wh/m²)
-                            <input type="number" id="irradiation" readonly>
+                            <input type="number" id="irradiation" min="0" readonly>
                         </label>
                     </li>
                     <li>
@@ -110,17 +240,17 @@
                     </li>
                     <li>
                         <label>Taxa de Perda (%)
-                            <input type="number" id="lostRate" readonly>
+                            <input type="number" id="lost_rate" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Desempenho Esperado (%)
-                            <input type="number" id="performance" readonly>
+                            <input type="number" id="performance" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Concessionária
-                            <select name="" id="concessionaire">
+                            <select id="concessionaire">
                                 <option></option>
                                 <option>ENEL SP</option>
                                 <option>COPEL-DIS</option>
@@ -131,32 +261,27 @@
                     </li>
                     <li>
                         <label>Tarifa de Energia (R$)
-                            <input type="number"id="tariff" readonly>
+                            <input type="number"id="tariff" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>TUSD Fio B
-                            <input type="number" id="tusd" readonly>
+                            <input type="number" id="tusd" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Iluminação Pública (R$)
-                            <input type="number" id="streetLighting" readonly>
+                            <input type="number" id="public_lighting" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Consumo Médio Mensal (kWh/mês)
-                            <input type="number" id="consumption">
-                        </label>
-                    </li>
-                    <li>
-                        <label>Geração Média Mensal (kWh/mês)
-                            <input type="number" id="averageGenerate" readonly>
+                            <input type="number" id="average_consumption" min="0">
                         </label>
                     </li>
                     <li>
                         <label>Potência dos Módulos (W)
-                            <select id="modulePerformance">
+                            <select id="module_power">
                                 <option></option>
                                 <option>550</option>
                                 <option>545</option>
@@ -169,18 +294,23 @@
                         </label>
                     </li>
                     <li>
+                        <label>Geração Média Mensal (kWh/mês)
+                            <input type="number" id="average_generation" min="0" readonly>
+                        </label>
+                    </li>
+                    <li>
                         <label>Quantidade de Módulos
-                            <input type="number" id="moduleQuantity" readonly>
+                            <input type="number" id="module_quantity" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Potência do Sistema (kWp)
-                            <input type="number" id="systemPower" readonly>
+                            <input type="number" id="system_power" min="0" readonly>
                         </label>
                     </li>
                     <li>
                         <label>Tipo de Projeto
-                            <select name="" id="project">
+                            <select name="" id="type_project">
                                 <option></option>
                                 <option>Residencial</option>
                                 <option>Comercial</option>
@@ -188,11 +318,31 @@
                                 <option>Rural</option>
                             </select>
                         </label>
-                        <button id="calc">Calcular</button>
+                    </li>
+                    <li>
+                        <label>Selecione o Kit Fotovoltaico
+                            <select name="" id="kit">
+                                <option></option>
+                                <option>Kit Fotovoltaico WEG 7,5 kWp</option>
+                                <option>Kit Fotovoltaico WEG 15,1 kWp</option>
+                                <option>Kit Fotovoltaico WEG 22,5 kWp</option>
+                                <option>Kit Fotovoltaico WEG 14,8 kWp</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Valor do Projeto
+                            <input type="number" id="system_values" min="0">
+                        </label>
                     </li>
                 </section>
+                <div id="save">
+                    <button id="save">Salvar</button>
+                </div>
             </div>
+            
     </main>
+    
 </body>
 
 </html>

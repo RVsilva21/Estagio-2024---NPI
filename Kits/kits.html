@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons svg/Green Icon.svg" />
+    <link rel="stylesheet" href="/Kits/kits.css">
+    <script src="/Kits/kits.js" defer></script>
+    <title>Zyon Energy | Kits</title>
+</head>
+
+<body>
+    <main class="containerHome">
+
+        <div class="ModalKit">
+            <div class="FormsRegisterKit">
+                <section>
+                    <h2 id="h2">Cadastrar Kit</h2>
+                    <h1 id="closeModal">x</h1>
+                </section>
+                <form>
+                    <div style="display: none;">
+                        <label for="kitId">ID do Kit</label>
+                            <input type="text" placeholder="ID do Kit" id="r_kitId" style="display: nones;">   
+                    </div>
+                    <div>
+                        <label for="kitId">Descrição do Kit</label>
+                            <input type="text" placeholder="Descrição do Kit" id="r_decribe" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Valor do Kit (R$)</label>
+                            <input type="text" placeholder="Informe o Valor" id="r_kitValue" style="display: nones;">                       
+                    </div>
+                    <div>
+                        <label for="kitId">Quantidade de Módulos</label>
+                            <input type="text" placeholder="Digite a Quantidade" id="r_moduleQuantity" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Potência do Módulo (W)</label>
+                            <input type="text" placeholder="Digite a Potência" id="r_modulePower" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Marca do Módulo</label>
+                            <input type="text" placeholder="Informe a Marca" id="r_moduleBrand" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Quantidade de Inversores</label>
+                            <input type="text" placeholder="Digite a quantidade" id="r_inverterQuantity" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Potência do Inveror (kW)</label>
+                            <input type="text" placeholder="Digite a Potência" id="r_inverterPower" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Marca do Inverdor</label>
+                            <input type="text" placeholder="Informe a Marca" id="r_inverterBrand" style="display: nones;">
+                    </div>
+                    <div>
+                        <label for="kitId">Fornecedor</label>
+                            <input type="text" placeholder="Digite o Fornecedor" id="r_supplier" style="display: nones;">
+                    </div>
+
+                    <button>Salvar</button>
+                </form>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <div class="logo">
+                <img src="/assets/images/Logo Zyon White.png" height="64" width="52">
+                <span>Zyon&nbsp<b>Energy</b></span>
+            </div>
+            <ul>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Home/home.html">
+                        <img src="/assets/icons/Resume.svg" width="30" height="30">
+                        <span>Resumo</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Customers/customer.html">
+                        <img src="/assets/icons/Customer.svg" width="30" height="30">
+                        <span>Clientes</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Projects/projects.html">
+                        <img src="/assets/icons/Projects.svg" width="30" height="30">
+                        <span>Projetos</span>
+                    </a>
+                </li>
+                <li class="items colorItems">
+                    <a href="http://127.0.0.1:5501/Kits/kits.html">
+                        <img src="/assets/icons/Kits.svg" width="30" height="30">
+                        <span>Kits</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Analytics/analytics.html">
+                        <img src="/assets/icons/Analytic.svg" width="30" height="30">
+                        <span>Relatórios</span>
+                    </a>
+                </li>
+                <li class="items">
+                    <a href="http://127.0.0.1:5501/Settings/settings.html">
+                        <img src="/assets/icons/Settings.svg" width="30" height="30">
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="arrow">
+                <img src="/assets/icons/Arrow Left.svg" id="arrowLeft" width="35" height="35">
+            </div>
+        </nav>
+
+        <section class="content">
+            <div class="topBar">
+                <div class="bell">
+                    <img src="/assets/icons/bell.svg" width="15" height="15">
+                </div>
+                <div class="menu_User">
+                    <input type="image" src="/assets/images/Perfil Linkedin.jpeg" width="30" height="30">
+                    <p>Renan Victor</p>
+                </div>
+            </div>
+
+            <div class="KitContent">
+                <section id="sectionKits">
+                    <h2>Tabela de Kits</h2>
+                    <button id="openModal">+</button>
+                </section>
+
+                <div class="divTableKits">
+                    <table>
+                        <tr class="lineHeader">
+                            <th scope="col" style="display:none;">ID do Kit</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Valor do Kit (R$)</th>
+                            <th scope="col">Quantidade de Módulos</th>
+                            <th scope="col">Potência do Módulo (W)</th>
+                            <th scope="col">Marca do Módulo</th>
+                            <th scope="col">Quantidade de Inversor(es)</th>
+                            <th scope="col">Potência do Inversor (kW)</th>
+                            <th scope="col">Marca do Inversor</th>
+                            <th scope="col">Fornecedor</th>
+                            <th scope="col">Edição</th>
+                        </tr>
+                        <tbody class="bodyTableKits">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>

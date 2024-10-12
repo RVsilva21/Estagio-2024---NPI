@@ -58,7 +58,7 @@ function addRows(result) {
         lineId += 1;
         row += `
         <tr id ="${lineId}">
-        <td class ="customer_id"style="display:none">${result[z].id_customer}</td>
+        <td class ="id_customer"style="display:none">${result[z].id_customer}</td>
         <td class="name">${result[z].name}</td>
         <td class="phone">${result[z].phone}</td>
         <td class="e_mail">${result[z].e_mail}</td>
@@ -102,7 +102,7 @@ async function postCustomer(urlPost) {
                 city: city.value,
                 e_mail: e_mail.value,
                 address: address.value
-            }),
+            })
         })
         
 
@@ -114,8 +114,10 @@ form.addEventListener('submit', () => {
     postCustomer(urlPost);
 })
 
+
 function fillEditModal(row) {
-    const customer_id = row.querySelector('.customer_id').innerText;
+
+    const id_customer = row.querySelector('.id_customer').innerText;
     const customerNameD = row.querySelector('.name').innerText;
     const customerTypeD = row.querySelector('.type').innerText;
     const phoneD = row.querySelector('.phone').innerText;
@@ -123,7 +125,7 @@ function fillEditModal(row) {
     const emailD = row.querySelector('.e_mail').innerText;
     const addressD = row.querySelector('.address').innerText;
 
-    document.querySelector('.customer_idD').value = customer_id;
+    document.querySelector('.id_customerD').value = id_customer;
     document.querySelector('.nameD').value = customerNameD;
     document.querySelector('.typeD').value = customerTypeD;
     document.querySelector('.phoneD').value = phoneD;
@@ -140,9 +142,9 @@ function fillEditModal(row) {
 const formD = document.querySelector('.formsCustomerD');
 const urlPut = `http://localhost:8085/updateCustomers`;
 
-async function UpdateCustomer(customer_id) {
+async function UpdateCustomer(id_customer) {
 
-    const response = await fetch(`${urlPut}/${customer_id}`, {
+    const response = await fetch(`${urlPut}/${id_customer}`, {
 
         headers: {
             'Accept': 'application/json',
@@ -150,8 +152,9 @@ async function UpdateCustomer(customer_id) {
         },
         method: 'PUT',
         body: JSON.stringify({
-            customer_name: document.querySelector('.nameD').value,
-            customer_type: document.querySelector('.typeD').value,
+
+            name: document.querySelector('.nameD').value,
+            type: document.querySelector('.typeD').value,
             phone: document.querySelector('.phoneD').value,
             city: document.querySelector('.cityD').value,
             e_mail: document.querySelector('.e_mailD').value,
@@ -159,10 +162,7 @@ async function UpdateCustomer(customer_id) {
         })
     })
 
-    data = await response.json();
-    const result = data;
-    console.log(result);
-
+    const data = await response.json();
 }
 
 document.addEventListener('click', (e) => {
@@ -171,13 +171,13 @@ document.addEventListener('click', (e) => {
         const row = target.closest('tr');
         fillEditModal(row);
         if (row) {
-            const idElement = row.querySelector('.customer_id');
+            const idElement = row.querySelector('.id_customer');
             if (idElement) {
-                const customer_id = idElement.innerText;
+                const id_customer = idElement.innerText;
                 modalEdit.style.display = "block";
 
                 formD.addEventListener('submit', () => {
-                    UpdateCustomer(customer_id);
+                    UpdateCustomer(id_customer);
                 })
             }
         }
@@ -200,17 +200,18 @@ closerD.addEventListener('click', () => {
 //Método DELETE
 const urlDelete = `http://localhost:8085/deleteCustomers`;
 
-async function deleteCustomer(customer_id) {
-    const response = await fetch(`${urlDelete}/${customer_id}`, {
+async function deleteCustomer(id_customer) {
+
+    const response = await fetch(`${urlDelete}/${id_customer}`, {
+        
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        method: 'DELETE',
+        method: 'DELETE'
     })
 
-    data = await response.json();
-    result = data;
+    const data = await response.json();
 }
 
 const modalDelete = document.querySelector('.ModalDelete');
@@ -222,13 +223,13 @@ document.addEventListener('click', (el) => {
     if (target) {
         const row = target.closest('tr');
         if (row) {
-            const idElement = row.querySelector('.customer_id');
+            const idElement = row.querySelector('.id_customer');
             if (idElement) {
-                const customer_id = idElement.innerText;
+                const id_customer = idElement.innerText;
                 modalDelete.style.display = 'block';
 
                 confirmDelete.addEventListener('click', () => {
-                    deleteCustomer(customer_id),
+                    deleteCustomer(id_customer),
                         modalDelete.style.display = 'none',
                         window.location.reload(true);
                 });
