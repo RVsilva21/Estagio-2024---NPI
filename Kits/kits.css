@@ -384,6 +384,12 @@ ul {
 
 /*Edit Buttons Table*/
 
+.columnEdit .edit, .delete {
+
+    cursor: pointer;
+
+}
+
 .columnEdit, .edit, span {
 
     margin-left: 5px;
@@ -595,5 +601,406 @@ ul {
 .FormsRegisterKit > div > button:hover {
 
     background: #036726;
+
+}
+
+
+
+/*Modal Edit Kit*/
+
+.ModalEditKit {
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: none;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    z-index: 5;
+
+    background: rgb(51, 51, 51,0.7);
+}
+
+
+
+/*Form Edit Kit*/
+
+.ModalEditKit .FormsEditKit {
+
+    width: 36%;
+    height: auto;
+    margin: 2% auto;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    background: #fff;
+    animation: appearing 0.3s ease-in-out;
+    transition: 0.3s;
+
+}
+
+@keyframes appearing {
+
+    for {
+        opacity: 0%;
+        transform: scale(0.1);
+    }
+    
+    to {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+.FormsEditKit > section {
+
+    width: 100%;
+    padding: 10px 0 10px 0;
+
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+    background: #067a2f;
+
+}
+
+.FormsEditKit > section > #h2 {
+
+    margin-left: 10px;
+
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.FormsEditKit > section > #closeModalEdit {
+
+    margin-left: auto;
+    margin-right: 20px;
+
+    font-weight: 300;
+    font-size: 30px;
+    color: #fff;
+
+    cursor: pointer;
+
+}
+
+.FormsEditKit > form {
+
+    width: 515px;
+    height: auto;
+
+    margin: 10px auto;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    column-gap: 20px;
+    row-gap: 30px;
+
+    justify-content: center;
+
+}
+
+.FormsEditKit > form > div {
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.FormsEditKit > form > div > label {
+
+    margin-bottom: 5px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+
+}
+
+.FormsEditKit > form > div > input {
+
+    border: 0.1px solid #d9d9d9;
+    border-radius: 5px;
+    outline: none;
+
+    max-width: 100%;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+
+    padding: 7px;
+
+    background: #ededed;
+
+}
+
+.FormsEditKit > form > div > input:focus {
+
+    border-color: #067a2f;
+
+}
+
+.FormsEditKit > div {
+
+    border-top: 0.1px solid #d9d9d9;
+
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 70px 0 0 0;
+
+    width: auto;
+    height: 40px;
+
+}
+
+.FormsEditKit > div > button#btnUpdateKit {
+
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+
+    padding: 10px;
+    margin-right: 15px;
+
+    width: 150px;
+    height: 40px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+
+    background: #067a2f;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.FormsEditKit > div > button#updateKit:hover {
+
+    background: #036726;
+
+}
+
+
+.FormsEditKit > div > button#cancelUpdate {
+
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+
+    padding: 10px;
+    margin-right: 15px;
+
+    width: 110px;
+    height: 40px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+
+    background: #f60909;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.FormsEditKit > div > button#cancelUpdate:hover {
+
+    background: #cf0202;
+
+}
+
+
+
+/*Modal Delete Kit*/
+
+.ModalDeleteKit {
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: none;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    z-index: 5;
+
+    background: rgb(51, 51, 51,0.7);
+}
+
+.ModalDeleteKit .DivDeleteKit {
+
+    width: 36%;
+    height: auto;
+    margin: 2% auto;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    background: #fff;
+    animation: appearing 0.3s ease-in-out;
+    transition: 0.3s;
+
+}
+
+@keyframes appearing {
+
+    for {
+        opacity: 0%;
+        transform: scale(0.1);
+    }
+    
+    to {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+.DivDeleteKit > section {
+
+    width: 100%;
+    padding: 10px 0 10px 0;
+
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+    background: #067a2f;
+
+}
+
+.DivDeleteKit > section > #h2 {
+
+    margin-left: 10px;
+
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.DivDeleteKit > section > #closeDeleteKit {
+
+    margin-left: auto;
+    margin-right: 20px;
+
+    font-weight: 300;
+    font-size: 30px;
+    color: #fff;
+
+    cursor: pointer;
+
+}
+
+.DivDeleteKit .MessageDelete {
+
+    width: 100%;
+    padding: 20px 0 20px 0;
+
+    display: block;
+    text-align: center;
+
+}
+
+.DivDeleteKit .MessageDelete > h3 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+.DivDeleteKit .MessageDelete > h5 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+
+}
+
+.DivDeleteKit > div {
+
+    display: flex;
+    justify-content: center;
+
+    padding: 10px 0 10px 0;
+
+    border-top: 0.1px solid #d9d9d9;
+
+}
+
+.DivDeleteKit > div > button#btnDeleteKit {
+
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+
+    padding: 10px;
+    margin-right: 15px;
+
+    width: 110px;
+    height: 40px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+
+    background: #067a2f;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.DivDeleteKit > div > button#btnDeleteKit:hover {
+
+    background: #036726;
+
+}
+
+.DivDeleteKit > div > button#btnCancelDelete {
+
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+
+    padding: 10px;
+    margin-right: 15px;
+
+    width: 110px;
+    height: 40px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+
+    background: #f60909;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.DivDeleteKit > div > button#btnCancelDelete:hover {
+
+    background: #cf0202;
 
 }

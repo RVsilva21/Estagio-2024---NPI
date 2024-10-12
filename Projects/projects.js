@@ -451,6 +451,7 @@ async function deleteProject(idPutInt) {
 }
 
 
+
 /*Open Modal Delete*/
 document.addEventListener('click', (e) => {
     const target = e.target.closest('.delete');
