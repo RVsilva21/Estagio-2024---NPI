@@ -277,7 +277,7 @@ document.addEventListener("click", (e)=> {
     if(element) {
 
         const rows = element.closest("tr");
-        const kitId = rows.querySelector(".kitId").innerText;
+        const kitId = parseInt(rows.querySelector(".kitId").innerText);
 
         fillFieldsKit(rows);
         ModalEditKit.style.display = "block";
