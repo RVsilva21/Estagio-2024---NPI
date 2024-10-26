@@ -113,6 +113,5 @@
     align-items: center;
     width: 60%;
     height: 100vh;
-    background: linear-gradient(180deg, #012C10, #067A2F);
-    border-radius: 50px 0px 0px 50px;
+    background: linear-gradient(to right, #067a2f,  #012C10);
 }
