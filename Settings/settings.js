@@ -23,3 +23,14 @@ arrow.addEventListener('click', () => {
     contentPage.classList.toggle('expand')
 })
 
+
+
+/*Function for Sign Out*/
+
+const sign_out = document.getElementById("sign_out");
+
+sign_out.addEventListener("click", ()=> {
+
+    window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+})

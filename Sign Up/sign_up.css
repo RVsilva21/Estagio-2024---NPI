@@ -24,7 +24,7 @@
     border-radius: 10px;
     border: 0.3px solid #d9d9d9;
     width:300px;
-    height: 465px;
+    height: auto;
     padding: 25px;
      
 }
@@ -101,6 +101,32 @@
 .field a span:hover{
     border-bottom: 0.3px solid #067A2F;
 }
+
+
+
+/*Field Select*/
+
+.field > select {
+
+    width: auto;
+    height: 42px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: 0.3px solid #d9d9d9;
+    color:#333333;
+    outline: none;
+    background: #fafafa;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+.field > select:focus {
+
+    border: 0.3px solid #067A2F;
+
+}
+
 
 #wallpaper{
     width:450px;

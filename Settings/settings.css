@@ -222,16 +222,188 @@ ul {
 }
 
 
-.new_customers {
+.settings {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+
     width: 95%;
     height: 80%;
     margin: 18px auto;
+
+    overflow: hidden;
     border-radius: 10px;
     border: 0.1px solid #d9d9d9;
+
+}
+
+.settings > section {
+
+    display: flex;
+    width: 100%;
+    height: auto;
+
+    background: #067a2f;
+
+}
+
+.settings > section > h2 {
+
+    margin: 15px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+
+}
+
+
+
+/*Field of the User*/
+
+.settings .u_fields {
+
+    display: grid;
+    gap: 30px;
+
+    width: 40%;
+    height: auto;
+
+    margin: 20px 0 0 15px;
+
+}
+
+.u_fields > article {
+
+    display: flex;
+    align-items: center;
+    
+    padding: 5px 0 5px 0;
+    
+
+}
+
+.u_fields > article > label {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+
+    margin-right: 5px;
+    width: 50px;
+
+}
+
+.u_fields > article > input {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+
+    border: 0.1px solid #d9d9d9;
+    border-radius: 5px;
+
+    background: #ededed;
+
+    width: 50%;
+    padding: 7px;
+    outline: none;
+
+}
+
+.u_fields > article > input:focus {
+
+    border-color:#067a2f;
+
+}
+
+.u_fields > article > select {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+
+    border: 0.1px solid #d9d9d9;
+    border-radius: 5px;
+
+    background: #ededed;
+
+    width: auto;
+    padding: 7px;
+    outline: none;
+
+}
+
+.u_fields > article > select:focus {
+
+    border-color:#067a2f;
+
+}
+
+
+
+/*Buttons of the Users*/
+
+.u_fields > article > button {
+
+    border: none;
+    border-radius: 5px;
+
+    transition: 0.3s;
+    outline: none;
+
+    cursor: pointer;
+    padding: 10px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.u_fields > article > button#upd_user {
+
+    background: #034ebe;
+
+}
+
+.u_fields > article > button#upd_user:hover {
+
+    background: #023583;
+
+}
+
+
+.u_fields > article > button#reg_user {
+
+    background: #067a2f;
+    margin: 0 10px 0 10px;
+
+}
+
+.u_fields > article > button#reg_user:hover {
+
+    background: #025d22;
+
+}
+
+
+.u_fields > article > button#sign_out {
+
+    background: #EC0202;
+
+}
+
+.u_fields > article > button#sign_out:hover {
+
+    background: #c80505;
 
 }
