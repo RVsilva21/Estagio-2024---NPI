@@ -291,7 +291,7 @@ ul {
     font-size: 14px;
     color: #000;
 
-    margin-right: 5px;
+    margin-right: 25px;
     width: 50px;
 
 }
@@ -405,5 +405,24 @@ ul {
 .u_fields > article > button#sign_out:hover {
 
     background: #c80505;
+
+}
+
+
+
+/*Modal user*/
+
+.ModalUser {
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: none;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    z-index: 1;
+
+    background: rgb(51, 51, 51,0.7);
 
 }

@@ -7,6 +7,8 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
+
 function selectItem() {
     items.forEach((item) => {
         item.classList.remove('colorItems')
@@ -25,13 +27,17 @@ arrow.addEventListener('click', () => {
 
 
 
-/*Function for Sign Out*/
+/**/
+
+
+
+/*Function for Sign Out with verified token*/
 
 const sign_out = document.getElementById("sign_out");
 
 sign_out.addEventListener("click", ()=> {
 
-    sessionStorage.removeItem("authToken");
+    sessionStorage.removeItem(token);
     window.location.href = "http://127.0.0.1:5501/Login/login.html";
 
 })
