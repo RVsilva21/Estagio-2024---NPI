@@ -6,6 +6,7 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
 
 //Lateral Menu Animation
 
@@ -86,12 +87,31 @@ closeDeleteKit.addEventListener('click', ()=> {
 })
 
 
-/*Function for reload page*/
-function reloadPage() {
 
-    window.location.reload(true);
+/*Verify Token*/
 
-}
+document.addEventListener("DOMContentLoaded", async() => {
+
+    try {
+
+        if(!token){
+
+            window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+        } else {
+
+            listKits(urlGet);
+            btnFuncRegisterKit();
+            btnUpdateKit();
+            btnDeleteKit();
+
+        }
+
+    } catch (error) {
+
+        console.log("Error", error);
+    }
+})
 
 
 
@@ -105,7 +125,8 @@ async function listKits(urlGet) {
 
         headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method: "GET"
     })
@@ -115,10 +136,6 @@ async function listKits(urlGet) {
 
     dynamicTable(result);
 }
-
-window.addEventListener("load", ()=> {
-    listKits(urlGet);
-})
 
 
 
@@ -147,7 +164,8 @@ async function registerKit(urlPost) {
         headers: {
 
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
 
         method:"POST",
@@ -162,13 +180,19 @@ async function registerKit(urlPost) {
 
 const btnRegisterKit = document.getElementById("registerKit");
 
+
+
+/*Register Kit after verify token*/
+
+function btnFuncRegisterKit() {
+
 btnRegisterKit.addEventListener("click", ()=> {
 
     registerKit(urlPost);
     ModalKit.style.display = "none";
-    reloadPage();
-
+    window.location.reload(true);
 })
+}
 
 
 
@@ -198,7 +222,8 @@ async function updateKit(kitId) {
         headers: {
 
             "Accept": "appication/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
 
         method: "PUT",
@@ -223,7 +248,8 @@ async function deleteKits(kitId) {
         headers: {
 
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         
         method: "DELETE"
@@ -268,7 +294,9 @@ function dynamicTable(result) {
 }
 
 
-/*Function Capture ID fot Put*/
+/*Function Capture ID fot Put after Verify Token*/
+
+function btnUpdateKit() {
 
 document.addEventListener("click", (e)=> {
 
@@ -288,14 +316,18 @@ document.addEventListener("click", (e)=> {
 
             updateKit(kitId);
             ModalEditKit.style.display = "none";
-            reloadPage();
+            window.location.reload(true);
 
         })
     }
 })
+}
 
 
-/*Function Capture ID fot Delete*/
+
+/*Function Capture ID fot Delete after verify Token*/
+
+function btnDeleteKit() {
 
 document.addEventListener("click", (e)=> {
 
@@ -314,12 +346,12 @@ document.addEventListener("click", (e)=> {
 
             deleteKits(kitId);
             ModalDeleteKit.style.display = "none";
-            reloadPage();
+            window.location.reload(true);
 
         })
     }
 })
-
+}
 
 
 /*Fill in Fields*/

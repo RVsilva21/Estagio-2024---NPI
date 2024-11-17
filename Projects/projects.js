@@ -7,6 +7,8 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
+
 function selectItem() {
     items.forEach((item) => {
         item.classList.remove('colorItems')
@@ -21,6 +23,33 @@ items.forEach((item) => {
 arrow.addEventListener('click', () => {
     lateralmenu.classList.toggle('retract')
     contentPage.classList.toggle('expand')
+})
+
+
+
+/*Verify Token*/
+
+document.addEventListener("DOMContentLoaded", async() => {
+
+    try {
+
+        if(!token) {
+
+            window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+        } else {
+
+            getProject(urlGet);
+            btnCreateProject();
+            btnUpdateProject();
+            btnDeleteProject();
+
+        }
+
+    } catch(error) {
+
+        console.log("Error", error);
+    }
 })
 
 
@@ -195,6 +224,13 @@ async function getProject(urlGet) {
 
     const response = await fetch(urlGet, {
 
+        headers: {
+
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+
         method: 'GET'
     })
 
@@ -279,7 +315,8 @@ async function createProject(urlPost) {
         headers: {
 
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
 
         method: 'POST',
@@ -291,10 +328,18 @@ async function createProject(urlPost) {
 
 }
 
+
+
+/*Function Create Project after verify Token*/
+
+function btnCreateProject() {
 const save = document.getElementById("save");
+
 save.addEventListener("click", () => {
-    createProject(urlPost)
+    createProject(urlPost);
+    window.location.reload(true);
 })
+}
 
 
 
@@ -349,6 +394,7 @@ function fieldModalEditProject(row) {
 
 //Function PUT
 const urlPut = "http://localhost:8085/updateProject";
+
 const saves = document.getElementById("saves");
 const modalUpdateProject = document.getElementById("ModalUpdateProject");
 const formsModalProject = document.querySelector(".formsModalProject");
@@ -360,7 +406,8 @@ async function updateProject(idPutInt) {
         headers: {
 
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
 
         method: 'PUT',
@@ -405,11 +452,18 @@ document.addEventListener('click', (e) => {
 })
 
 
+
+/*Function btnUpdateProject after verify token*/
+
+function btnUpdateProject() {
 saves.addEventListener("click", ()=> {
     
     const idPutInt = parseInt(document.querySelector(".project_id").innerText);
     updateProject(idPutInt);
+    window.location.reload(true);
 })
+}
+
 
 
 /*Closer Modal Edit*/
@@ -431,6 +485,7 @@ cancel_edit.addEventListener("click", () => {
 
 //Function DELETE
 const urlDelete = "http://localhost:8085/deleteProject";
+
 const modalDeleteProject = document.querySelector(".ModalDeleteProject");
 const cancelDeleteProject = document.getElementById("d_delete");
 const c_Delete = document.getElementById("c_Delete");
@@ -441,7 +496,8 @@ async function deleteProject(idPutInt) {
         
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
         method: 'DELETE'
 
@@ -452,7 +508,10 @@ async function deleteProject(idPutInt) {
 
 
 
-/*Open Modal Delete*/
+/*Function btnDeleteProject after verify token*/
+
+function btnDeleteProject() {
+
 document.addEventListener('click', (e) => {
     const target = e.target.closest('.delete');
     if (target) {
@@ -469,6 +528,7 @@ document.addEventListener('click', (e) => {
         })
     }
 })
+}
 
 
 /*Closer Modal Delete*/
@@ -477,10 +537,4 @@ document.addEventListener('click', (e)=> {
     if(target) {
         modalDeleteProject.style.display = "none";
     }
-})
-
-
-/*Load Page*/
-window.addEventListener("load", () => {
-    getProject(urlGet);
 })

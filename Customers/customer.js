@@ -7,6 +7,8 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
+
 function selectItem() {
     items.forEach((item) => {
         item.classList.remove('colorItems')
@@ -33,6 +35,33 @@ closerC.addEventListener('click', () => {
 
 
 
+/*Verify Token*/
+
+document.addEventListener("DOMContentLoaded", async() => {
+
+    try {
+
+        if(!token) {
+
+            window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+        } else {
+
+            btnGetCustomer();
+            btnPostCustomer();
+            btnUpdateCustomer();
+            btnDeleteCustomer();
+
+        }
+
+    } catch(error) {
+
+        console.log("Error", error);
+    }
+})
+
+
+
 //Método GET
 const search = document.getElementById('searchC');
 const table = document.querySelector('.bodyTable');
@@ -41,7 +70,18 @@ const modalEdit = document.querySelector('.ModalEdit');
 const urlGet = "http://localhost:8085/customersList";
 
 async function getCustomer(urlGet) {
-    const response = await fetch(urlGet, { method: "GET" });
+    const response = await fetch(urlGet, { 
+        
+        headers: {
+
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        method: "GET" 
+    
+    });
+
     var dataCustomer = await response.json();
     result = dataCustomer;
     addRows(result);
@@ -91,7 +131,8 @@ async function postCustomer(urlPost) {
         {
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`
             },
 
             method: "POST",
@@ -110,9 +151,16 @@ async function postCustomer(urlPost) {
     result = customer;
 }
 
+
+
+/*Function btnPostCustomer after verify token*/
+
+function btnPostCustomer() {
 form.addEventListener('submit', () => {
     postCustomer(urlPost);
 })
+}
+
 
 
 function fillEditModal(row) {
@@ -147,9 +195,12 @@ async function UpdateCustomer(id_customer) {
     const response = await fetch(`${urlPut}/${id_customer}`, {
 
         headers: {
+
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
+
         method: 'PUT',
         body: JSON.stringify({
 
@@ -165,6 +216,11 @@ async function UpdateCustomer(id_customer) {
     const data = await response.json();
 }
 
+
+
+/*Function btnUpdateCustomer after verify token*/
+
+function btnUpdateCustomer() {
 document.addEventListener('click', (e) => {
     const target = e.target.closest('.edit');
     if (target) {
@@ -183,6 +239,9 @@ document.addEventListener('click', (e) => {
         }
     }
 })
+}
+
+
 
 const cancel = document.querySelector('.cancel');
 const closerD = document.getElementById('closerD');
@@ -205,9 +264,12 @@ async function deleteCustomer(id_customer) {
     const response = await fetch(`${urlDelete}/${id_customer}`, {
         
         headers: {
+
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
         },
+
         method: 'DELETE'
     })
 
@@ -217,6 +279,12 @@ async function deleteCustomer(id_customer) {
 const modalDelete = document.querySelector('.ModalDelete');
 const confirmDelete = document.getElementById('confirmDelete');
 const deny = document.getElementById('deny');
+
+
+
+/*Function btnDeleteCustomer after verify token*/
+
+function btnDeleteCustomer() {
 
 document.addEventListener('click', (el) => {
     const target = el.target.closest('.delete');
@@ -237,13 +305,21 @@ document.addEventListener('click', (el) => {
         }
     }
 });
+}
+
+
 
 deny.addEventListener('click', () => {
     modalDelete.style.display = 'none';
 })
 
 
+
+/*Function btnGetCustomer after verify Token*/
+
+function btnGetCustomer() {
 window.addEventListener('load', () => {
     getCustomer(urlGet);
     table.style.opacity = 1;
 })
+}

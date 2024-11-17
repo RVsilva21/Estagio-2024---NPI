@@ -7,6 +7,9 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
+console.log(token);
+
 function selectItem() {
     items.forEach((item) => {
         item.classList.remove('colorItems')
@@ -25,6 +28,33 @@ arrow.addEventListener('click', () => {
 
 
 
+/*Verify Token*/
+
+document.addEventListener("DOMContentLoaded", async ()=> {
+
+    try {
+
+        if(!token) {
+
+            window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+        } else {
+
+            customers(url_q_customers);
+            projects_qtd(url_q_projects);
+            projects_value(url_v_projects);
+            projects_kwp(url_p_projects);
+
+        }
+
+    } catch (error) {
+
+        console.log("Error", error);
+    }
+})
+
+
+
 /*Get Quantity Customers*/
 
 const q_customers = document.getElementById("q_customers");
@@ -37,14 +67,14 @@ async function customers(url_q_customers) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
+
         method:"GET"
     })
 
     const result = await response.json()
-
-
 
     let qtd_customers = 0;
 
@@ -52,9 +82,6 @@ async function customers(url_q_customers) {
     q_customers.innerHTML = qtd_customers;
     
 }
-
-customers(url_q_customers);
-
 
 
 
@@ -70,7 +97,8 @@ async function projects_qtd(url_q_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -84,10 +112,7 @@ async function projects_qtd(url_q_projects) {
     result.forEach(()=> qtd_projects++);
     q_projects.innerHTML = qtd_projects;
 
-    console.log(qtd_projects);
 }
-
-projects_qtd(url_q_projects);
 
 
 
@@ -103,7 +128,8 @@ async function projects_value(url_v_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -121,10 +147,8 @@ async function projects_value(url_v_projects) {
     }
     
     v_projects.innerHTML = value_projects.toLocaleString("BRL",{style:"currency", currency:"BRL"});
-    console.log(value_projects)
-}
 
-projects_value(url_v_projects);
+}
 
 
 
@@ -140,7 +164,8 @@ async function projects_kwp(url_p_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -158,7 +183,5 @@ async function projects_kwp(url_p_projects) {
     }
     
     p_projects.innerHTML = kwp_projects + " kWp";
-    console.log(kwp_projects);
-}
 
-projects_kwp(url_p_projects);
+}

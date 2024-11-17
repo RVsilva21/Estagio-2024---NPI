@@ -73,10 +73,10 @@
     border-color: #067A2F;
 }
 
-.field a button{
+.field button{
     width: 100%;
     height: 45px;
-    margin-top: 25px;
+    margin-top: 45px;
     padding: 8px;
     border-radius: 10px;
     color: #fff;
@@ -89,7 +89,7 @@
     outline: none;
 }
 
-.field a button:hover{
+.field button:hover{
     background: #067A2F;
 }
 

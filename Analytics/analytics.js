@@ -7,6 +7,8 @@ const btnNewCustomer = document.getElementById('btnNewCustomer');
 const modalCreate = document.querySelector('.ModalCreate');
 const closerC = document.getElementById('closerC');
 
+const token = sessionStorage.getItem("authToken");
+
 function selectItem() {
     items.forEach((item) => {
         item.classList.remove('colorItems')
@@ -25,6 +27,33 @@ arrow.addEventListener('click', () => {
 
 
 
+/*Verify Token*/
+
+document.addEventListener("DOMContentLoaded", async ()=> {
+
+    try {
+
+        if(!token) {
+
+            window.location.href = "http://127.0.0.1:5501/Login/login.html";
+
+        } else {
+
+            customers(url_q_customers);
+            projects_qtd(url_q_projects);
+            projects_value(url_v_projects);
+            projects_kwp(url_p_projects);
+
+        }
+
+    } catch (error) {
+
+        console.log("Error", error);
+    }
+})
+
+
+
 /*Get Quantity Customers*/
 
 const q_customers = document.getElementById("q_customers");
@@ -37,7 +66,8 @@ async function customers(url_q_customers) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -53,9 +83,6 @@ async function customers(url_q_customers) {
     
 }
 
-customers(url_q_customers);
-
-
 
 
 /*Get Total Projects*/
@@ -70,7 +97,8 @@ async function projects_qtd(url_q_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -87,8 +115,6 @@ async function projects_qtd(url_q_projects) {
     console.log(qtd_projects);
 }
 
-projects_qtd(url_q_projects);
-
 
 
 /*Get Total Value Projects*/
@@ -103,7 +129,8 @@ async function projects_value(url_v_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -124,8 +151,6 @@ async function projects_value(url_v_projects) {
     console.log(value_projects)
 }
 
-projects_value(url_v_projects);
-
 
 
 /*Get Total Value Projects (kWp)*/
@@ -140,7 +165,8 @@ async function projects_kwp(url_p_projects) {
         headers: {
             
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         method:"GET"
     })
@@ -160,5 +186,3 @@ async function projects_kwp(url_p_projects) {
     p_projects.innerHTML = kwp_projects + " kWp";
     console.log(kwp_projects);
 }
-
-projects_kwp(url_p_projects);

@@ -19,14 +19,15 @@
                     <span>Cadastre-se</span>
                 </div>
                 <div class="field">
-                    <input type="text" class="name" placeholder="Digite seu nome">
-                    <input type="text" class="email" placeholder="Digite seu e-mail">
-                    <input type="password" class="password" placeholder="Digite sua senha">
-                    <select>
-                        <option>Selecione seu Perfil</option>
-                        <option>Administrador</option>
-                        <option>Engenheiro</option>
-                        <option>Vendedor</option>
+                    <input type="text" class="name" placeholder="Digite seu nome" required>
+                    <input type="text" class="email" placeholder="Digite seu e-mail" required>
+                    <input type="text" class="nickname" placeholder="Digite seu nickname" required>
+                    <input type="password" class="password" placeholder="Digite sua senha" required>
+                    <select class="userRole" required>
+                        <option></option>
+                        <option>ADMIN</option>
+                        <option>ENG</option>
+                        <option>SALES</option>
                     </select>
                     <a>
                         <button class="register">Cadastrar</button>
