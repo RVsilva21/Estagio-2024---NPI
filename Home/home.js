@@ -55,6 +55,33 @@ document.addEventListener("DOMContentLoaded", async ()=> {
 
 
 
+/*Get User Name DB*/
+/*
+const user_name_db = document.getElementById("user_name_db");
+const urlGetUser = "http://localhost:8085/auth/list";
+
+async function getUserNameDB(urlGetUser) {
+    
+    const response = await fetch(urlGetUser, {
+
+        headers: {
+
+            "Content-Type": "application/json"
+        },
+
+        method: "GET"
+    })
+
+    const result = await response.json();
+    let data = result.name;
+
+}
+
+getUserNameDB(urlGetUser);
+*/
+
+
+
 /*Get Quantity Customers*/
 
 const q_customers = document.getElementById("q_customers");
